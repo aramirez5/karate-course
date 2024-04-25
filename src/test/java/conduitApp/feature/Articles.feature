@@ -8,18 +8,19 @@ Feature: Articles
         * set articleRequestBody.description.title = dataGenerator.getRandomArticleValues().description
         * set articleRequestBody.article.body = dataGenerator.getRandomArticleValues().body
 
+    @debug
     Scenario: Create a new article
         Given path 'articles'
         And request articleRequestBody
         When method Post
-        Then status 200
+        Then status 201
         And match response.article.title == articleRequestBody.article.title
-   
+
     Scenario: Create and delete article
         Given path 'articles'
         And request articleRequestBody
         When method Post
-        Then status 200
+        Then status 201
         * def articleId = response.article.slug
 
         Given params { limit: 10, offset:0 }

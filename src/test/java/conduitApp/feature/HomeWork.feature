@@ -20,7 +20,7 @@ Feature: Home Work
         Given path 'articles', articleId, '/favorite'
         And request articleFavorite
         When method Post
-        Then status 200
+        Then status 201
         # Step 4: Verify response schema
         And match response == 
         """
@@ -127,7 +127,7 @@ Feature: Home Work
         Given path 'articles', articleId, '/comments'
         And request newComment
         When method Post
-        Then status 200
+        Then status 201
         And match response ==
         # Step 7: Verify response schema that should contain posted comment text
         """
@@ -156,7 +156,7 @@ Feature: Home Work
         * def commentId = response.comments[0].id
         Given path 'articles', articleId, '/comments', commentId
         When method Delete
-        Then status 200
+        Then status 204
         # # Step 11: Get all comments again and verify number of comments decreased by 1
         Given path 'articles', articleId, '/comments'
         When method Get

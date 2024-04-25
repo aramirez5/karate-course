@@ -22,7 +22,7 @@ Feature: Sign up a new user
         }
         """
         When method Post
-        Then status 200
+        Then status 201
         And match response ==
         """
             {

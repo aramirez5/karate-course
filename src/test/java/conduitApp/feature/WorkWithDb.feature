@@ -6,7 +6,6 @@ Feature: Work with database
     Scenario: Seed database with a new job
         * eval dbHandler.addNewJobWithName("QA3")
 
-    @debug 
     Scenario: Get level for job
         * def level = dbHandler.getMinAndMaxLevelsForJob("QA3")
         * print level.minLvl
