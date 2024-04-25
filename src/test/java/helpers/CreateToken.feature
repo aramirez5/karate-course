@@ -5,6 +5,6 @@ Feature: Create Token
         Given path 'users/login'
         And request {"user": {"email": "#(UserEmail)", "password": "#(UserPassword)"}}
         When method Post
-        Then status 201
+        Then status 200
         * def authToken = response.user.token
         
