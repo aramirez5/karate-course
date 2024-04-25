@@ -1,11 +1,11 @@
 {
-    "comment": {
-        "body": "soy un comentario de ejemplo",
-        "author": {
-            "username": "karate1_test",
-            "bio": null,
-            "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
-            "following": false
-        }
+  "comment": {
+    "body": "soy un comentario de ejemplo",
+    "author": {
+      "username": "karate1_test",
+      "bio": null,
+      "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+      "following": false
     }
+  }
 }
