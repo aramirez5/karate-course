@@ -1,0 +1,33 @@
+name: Karate Test
+run-name: Pipeline - from user @${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - master
+  
+  pull_request:
+    types:
+      - opened
+      - closed
+    branches:
+      - master
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run Karate test
+      uses: mvn test -Dkarate.options="--tags @debug"
+
+    - name: Upload report
+      uses: actions/upload-artifact@v4
+      with:
+        name: karate-report
+        path: target/karate-reports
+        retention-days: 30
