@@ -4,14 +4,14 @@ run-name: Pipeline - from user @${{ github.actor }}
 on:
   push:
     branches:
-      - master
+      - main
   
   pull_request:
     types:
       - opened
       - closed
     branches:
-      - master
+      - main
 
 jobs:
   test:
