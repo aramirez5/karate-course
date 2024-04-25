@@ -23,7 +23,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Run Karate test
-      run: mvn test -Dkarate.options="--tags @debug"
+      run: mvn test -Dkarate.options="--tags @signup"
 
     - name: Upload report
       uses: actions/upload-artifact@v4

@@ -6,6 +6,7 @@ Feature: Sign up a new user
         * def randomUsername = dataGenerator.getRandomUsername()
         Given url apiUrl
 
+    @signup
     Scenario: New user sign up
         # Given def userData = {"email": "karate78990@test78990.com", "username": "karate78990test78990"}
         Given path 'users'
@@ -27,6 +28,7 @@ Feature: Sign up a new user
         """
             {
                 "user": {
+                    "id": '#number',
                     "email": #(randomEmail),
                     "username": #(randomUsername),
                     "bio": null,
